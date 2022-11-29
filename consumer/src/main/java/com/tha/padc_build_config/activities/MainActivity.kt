@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity(), MainView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setUpPresenter()
+        setUpToolbar()
         setUpRecyclerView()
 
         mPresenter.onUiReady()
@@ -30,6 +31,11 @@ class MainActivity : AppCompatActivity(), MainView {
     private fun setUpPresenter() {
         mPresenter = ViewModelProvider(this)[MainPresenterImpl::class.java]
         mPresenter.initView(this)
+    }
+
+    private fun setUpToolbar(){
+        setSupportActionBar(toolbar)
+        supportActionBar?.title = "Welcome to ${getString(R.string.app_name)}"
     }
 
 

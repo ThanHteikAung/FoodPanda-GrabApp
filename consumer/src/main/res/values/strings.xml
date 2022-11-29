@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">PADC-Build-Config</string>
     <string name="txt_consumer">Consumer</string>
     <string name="txt_restaurant_name">KFC</string>
     <string name="txt_food_category">Fast Food</string>
