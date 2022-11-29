@@ -10,7 +10,7 @@ object  RestaurantModelImpl : RestaurantModel, BaseModel() {
         onSuccess: (List<RestaurantVO>) -> Unit,
         onFailure: (String) -> Unit
     ) {
-        mRestaurantApi.getRestaurants()
+        mRestaurantApi?.getRestaurants()
             ?.subscribeOn(Schedulers.io())
             ?.observeOn(AndroidSchedulers.mainThread())
             ?.subscribe({

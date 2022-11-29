@@ -32,6 +32,26 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    flavorDimensions "food-delivery-app-flavor"
+    productFlavors {
+        //key
+        def ENDPOINT_FIELD = "ENDPOINT"
+
+        //Value
+        def ENDPOINT_FOOD_PANDA = "\"https://88822541-baee-4217-afff-ba00dd62082b.mock.pstmn.io\""
+        def ENDPOINT_GRAB = "\"https://db9ec46c-881d-4055-8660-f9a6149ed64f.mock.pstmn.io\""
+
+        foodPanda {
+            applicationIdSuffix ".foodpanda"
+            buildConfigField "String", ENDPOINT_FIELD, ENDPOINT_FOOD_PANDA
+        }
+
+        grab {
+            applicationIdSuffix ".grab"
+            buildConfigField "String", ENDPOINT_FIELD, ENDPOINT_GRAB
+        }
+    }
 }
 
 dependencies {
